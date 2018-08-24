@@ -11,8 +11,10 @@ public class RibbonController {
     @Autowired
     private RestTemplate restTemplate;
 
-    @RequestMapping("/hello/{name}")
-    public String hello(@PathVariable("name") String name){
+//    @RequestMapping("/hello/{name}")
+    @RequestMapping("/hello")
+//    public String hello(@PathVariable("name") String name){
+    public String hello(String name){
         String result=restTemplate.getForObject("http://SPRINGCLOUDPRODUCER/hello?name="+name,String.class);
         return result;
     }
