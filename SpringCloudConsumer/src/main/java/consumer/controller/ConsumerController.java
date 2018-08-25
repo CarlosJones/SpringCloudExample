@@ -1,5 +1,6 @@
 package consumer.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import consumer.remote.HelloRemote;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConsumerController {
 
     @Autowired
-    HelloRemote HelloRemote;
+    private HelloRemote HelloRemote;
 	
-    @RequestMapping("/hello/{name}")
-    public String index(@PathVariable("name") String name) {
+    @RequestMapping("/hello")
+    @HystrixCommand(fallbackMethod = "helloError")
+    public String index(String name) {
         return HelloRemote.hello(name);
     }
-
 }
