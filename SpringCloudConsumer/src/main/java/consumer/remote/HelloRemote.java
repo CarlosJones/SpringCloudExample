@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 /**
  * Created by summer on 2017/5/11.
  */
+//@FeignClient(name="SpringCloudProducer")
 @FeignClient(name="SpringCloudProducer",fallback = HelloError.class)
 public interface HelloRemote {
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
