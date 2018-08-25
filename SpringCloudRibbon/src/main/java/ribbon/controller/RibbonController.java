@@ -18,7 +18,7 @@ public class RibbonController {
     @HystrixCommand(fallbackMethod = "helloError")
     public String hello(String name){
         String result=restTemplate.getForObject("http://SPRINGCLOUDPRODUCER/hello?name="+name,String.class);
-        return result;
+        return result+" :ribbon";
     }
 
     public String helloError(String name){

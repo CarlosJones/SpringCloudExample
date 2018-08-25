@@ -16,6 +16,6 @@ public class ConsumerController {
     @RequestMapping("/hello")
     @HystrixCommand(fallbackMethod = "helloError")
     public String index(String name) {
-        return HelloRemote.hello(name);
+        return HelloRemote.hello(name)+" :feign";
     }
 }
