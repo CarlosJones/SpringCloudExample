@@ -1,0 +1,49 @@
+server:
+  port: 7001
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8001/eureka/
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:UniverseFreelancer/config-repo.git                   # 配置git仓库的地址
+ #         search-paths: config-repo                                               # git仓库地址下的相对地址，可以配置多个，用,分割。
+ #         username:   UniverseFreelancer                                          # git仓库的账号
+ #         password:   dingfang20180827                                            # git仓库的密码
+          ignoreLocalSshSettings: true                                             #为了激活基于属性的SSH配置
+          privateKey: -----BEGIN RSA PRIVATE KEY-----
+            MIIEpQIBAAKCAQEAm5VQwh9xpHoWZzqmvMOLQl9nCfjq/3Eru0AEjtUE7OXcUOT3
+            JqqJ3aJidc1u7pDNuTPfC103NoG9lgK+Ccf/E3P+cU0nJ5uFoJFYjIXCIuSV8cSd
+            HrQLjUFRJWlvwHvwaGbk9czxeURcJeClW6NDr8hffGGtJpG8hFJ4Q2Koohy9lRTF
+            smEAcXGL4xjGhufsVX2Nj+Mplz7nRzjlnQYAG9DmanJe88wojX/N8YUoeqYMS7WH
+            QVLB3Ru0SwWjpLer367QIMKLICoYY5+L13BoozQKOoW3x+qu5OxscmQxx8hW7T7U
+            r+3JLls9/pezMnk6+LjFqbfcgFPDTuoEpshzuwIDAQABAoIBAQCExiuSTvVT0WD3
+            HcWXyCU7MmGj0Ar0jics+Ngq8L3wUcXwP0ZweA+J1n/CWtw1udvnFs5dS2LIIHaj
+            45k8jbIwbsgQ9y/YDFBAlGmGGsxvrLYOCqWvwyUsmjZfABj/ooWrA0yYPBtDS0R8
+            irdzeeRUymI6qrzy8mJ4Zkz97N9O4HVPE749Ha/0NkyojfH7IlZ+DkjbOn9T/bZG
+            2eVjJfpL9YeVUgvtIko1wN3hNBoA1CUh272gTlXXUyMmkhizcgIoCBOxDh6/HgKo
+            kka6YNetPFYrNL7SZfjIDKTJkGoiXD0wKcx4RNH/YrmSJ7k4ng4eUVAcoHnudKmx
+            OLQCgJKhAoGBAM6gcd5DlwiMH6mAd+jixAASFDJTFVpXysJD9NLTUTwhGP7kZs9x
+            fxAWJ39dFkNAzUI5U5gm4PvnATKpH2k+8K71tAQ0AKLV2NR22eDZ8Xe+7P7/clYX
+            CGVMdTztUjE7qZbdCLrlihaCSiE01MkTW5pWFxyfJ6sAO2kohTj41l6LAoGBAMDC
+            fhaBc13mXMBSeiYr76lqZsQeK+azCar0Jq6QjG3PBmDobOBAIuMo2FagUy3ofGE5
+            yLDNaOgRXsYLiT/jRJylPNxs1qJNp8V+mAlAMCcggTIcozPizLIjsszcd5FV2vao
+            oO4xMCu61ZJv8OZ3pIiP2WCCvrRi+gSl1yJBwpWRAoGBAIpW9aXgDvDUECbGMoIj
+            wSJi+E6xPayc9s2V/gZhIRRm/Hs7pHHjBTVZ/9vQESW57zMVeph1/0/oW+71OGiY
+            kUAylPHzdzGOh3vIjxtyD68ijz4y/PQSu7ZGuH+wTMVVsrelCUFIiWmElekhnA17
+            /mqYlSS+kip1H1HKpVd9ktj9AoGAVYQz0iI+H3N6xKwSmuq1GbElxG4qReA6Msi8
+            fIeOdYz6JHYZD2gE0kilqdDY9i4FOFEdcyq+Fu7V4ADwNBLMtr4sARKcKkdPXjPq
+            mXgLpOAr0SKZWQSOkZ16zp4kwaqYSQPI2cOivlPWOnBFLMn5ichfxQxcNMUQbI1y
+            ozUPcbECgYEAtzCJIIepIUE+Tqr6n+YOQbSFGLs0NBbN3c9wLLteGDZXn1ioBoVK
+            VcMd5WaZZGw/mbvJ37D1avcdmQywD5ITr0O6OvqFZu2Ug9HysNbfUTEBwbsvoLTq
+            /cCD1l4dkzaQw5hDVqUHaPQZizXEfJMhL3orifpWne0lA+UMgISZDhE=
+            -----END RSA PRIVATE KEY-----
+
+  # Spring Cloud Config也提供本地存储配置的方式。
+  # 只需要设置属性spring.profiles.active=native，Config Server会默认从应用的src/main/resource目录下检索配置文件。
+  # 可以通过spring.cloud.config.server.native.searchLocations=file:E:/properties/属性来指定配置文件的位置。

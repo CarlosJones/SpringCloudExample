@@ -36,4 +36,17 @@
 2.http://192.168.0.101:8766/feign/hello?accessToken=feign&name=aaa，
   http://192.168.0.101:8766/ribbon/hello?accessToken=ribbon&name=aaa
   访问网关地址，zuul根据路径/feign 和/ribbon 的区别，发送给对应的服务尽心处理。
--------------------------------------------------------------------
+----------------------SpringCloudConfigServer---------------------------------------------
+1.配置文件存储在：git@github.com:UniverseFreelancer/config-repo.git
+2.启动SpringCloudConfigServer，访问http://localhost:7001/neo-config/dev，
+    返回{"name":"neo-config","profiles":["dev"],"label":null,"version":null,"state":null,"propertySources":[]}，
+    说明启动成功了
+    如果直接查看配置文件中的配置信息可访问：http://localhost:7001/neo-config-pro.properties，返回：dev/test/pro:
+3.仓库中的配置文件会被转换成web接口，访问可以参照以下的规则：
+  /{application}/{profile}[/{label}]
+  /{application}-{profile}.yml
+  /{label}/{application}-{profile}.yml
+  /{application}-{profile}.properties
+  /{label}/{application}-{profile}.properties
+--------------------------------------------------------------------------------------------
+
