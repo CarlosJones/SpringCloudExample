@@ -5,7 +5,9 @@
     127.0.0.1 peer2
 3.启动时报错，没有关系
 4.http://peer2:8001查看启动情况
------------SpringCloudProducer----------
+-----------SpirngCloudEureka2-------------
+因为eureka注册中心的重要性，需要在系统中启动2个服务器，以保证服务的高可用性
+-----------SpringCloudProducer-----------
 将服务注册到peer2上，因为单机情况
 -----------SpringCloudProducer2----------
 1.producer的第二个实例，同一个服务，生成2个实例，只是端口号不同
@@ -35,7 +37,7 @@
 1.使用zuul配置网关，有2个功效，一个是过滤，一个是路由
 2.http://192.168.0.101:8766/feign/hello?accessToken=feign&name=aaa，
   http://192.168.0.101:8766/ribbon/hello?accessToken=ribbon&name=aaa
-  访问网关地址，zuul根据路径/feign 和/ribbon 的区别，发送给对应的服务尽心处理。
+  访问网关地址，zuul根据路径/feign 和/ribbon 的区别，发送给对应的服务中心处理。
 ----------------------SpringCloudConfigServer---------------------------------------------
 1.配置文件存储在：git@github.com:UniverseFreelancer/config-repo.git
 2.启动SpringCloudConfigServer，访问http://localhost:7001/neo-config/dev，
@@ -48,5 +50,7 @@
   /{label}/{application}-{profile}.yml
   /{application}-{profile}.properties
   /{label}/{application}-{profile}.properties
---------------------------------------------------------------------------------------------
+-------------------------SpringCloudConfigClient-----------------------------------------------
+1.Auth fail访问不了github
+-----------------------------------------------------------------------------------------------
 
