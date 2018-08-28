@@ -51,6 +51,7 @@
   /{application}-{profile}.properties
   /{label}/{application}-{profile}.properties
 -------------------------SpringCloudConfigClient-----------------------------------------------
-1.Auth fail访问不了github
+1.更换了ConfigServer的github认证方式，ssh换电脑后不好用
+2.configClient还是跑不起来
 -----------------------------------------------------------------------------------------------
 
