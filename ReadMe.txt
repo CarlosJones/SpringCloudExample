@@ -52,6 +52,6 @@
   /{label}/{application}-{profile}.properties
 -------------------------SpringCloudConfigClient-----------------------------------------------
 1.更换了ConfigServer的github认证方式，ssh换电脑后不好用
-2.configClient还是跑不起来
+2.configClient获取不到ConfigServer的数据。
 -----------------------------------------------------------------------------------------------
 

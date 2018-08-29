@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by CarloJones on 2018/8/28.
  */
 @SpringBootApplication
-@RestController
-@EnableDiscoveryClient
 public class ConfigClientApplication {
     public static void main(String[] args) {
         SpringApplication.run(ConfigClientApplication.class,args);

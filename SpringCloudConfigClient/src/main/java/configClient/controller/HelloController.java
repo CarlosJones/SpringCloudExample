@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by CarloJones on 2018/8/28.
  */
 @RestController
-@RefreshScope
 public class HelloController {
-    @Value("${neo-config}")
+    //相当于引用了properties文件中的 dev配置
+    //如果没有获取到dev 的值，就会默认读取 :后面的值，相当于一个默认值了
+    @Value("${foo:config server not found}")
     String dev;
 
     @RequestMapping("/dev")
