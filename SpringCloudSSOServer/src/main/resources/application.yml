@@ -1,0 +1,10 @@
+server:
+  port: 8099
+  context-path: /auth
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8001/eureka/
+security:
+  basic:
+    enabled: false

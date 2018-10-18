@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
     //相当于引用了properties文件中的 dev配置
     //如果没有获取到dev 的值，就会默认读取 :后面的值，相当于一个默认值了
-    @Value("${foo:config server not found}")
+    @Value("${spring.cloud.config.profile}")
     String dev;
 
     @RequestMapping("/dev")

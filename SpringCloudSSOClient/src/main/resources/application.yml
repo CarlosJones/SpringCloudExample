@@ -1,0 +1,23 @@
+server:
+    port: 8089
+    session:
+      cookie:
+        name: UI2SESSION
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer2:8001/eureka/
+security:
+  basic:
+    enabled: false
+  oauth2:
+    client:
+      clientId: SampleClientId
+      clientSecret: secret
+      accessTokenUri: http://localhost:8099/auth/oauth/token
+      userAuthorizationUri: http://localhost:8099/auth/oauth/authorize
+    resource:
+      userInfoUri: http://localhost:8099/auth/door/me
+spring:
+  thymeleaf:
+    cache: false
